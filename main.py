@@ -14,6 +14,9 @@ os.environ["ROCKS_CACHE_DIR"] = "no-cache"
 rocks.config.CACHELESS = True
 import classy  # noqa
 
+classy.config.APP_MODE = True
+print(classy.config.APP_MODE)
+
 spectra = []
 spectra_lit = []
 spectra_user = {}
@@ -93,10 +96,22 @@ with left:
                     refl_err=data.refl_err if "refl_err" in data.columns else None,
                 )
 
+                # TODO: Cache a bft table, remove some odd columns
+                # tar gz format
+                # Merge bft with index, make rocks queries unnecessary, we only want the albedo anyways
+                #
+                # index in parquet format?
+                #
+                # TODO: Make size of index more apparent, give more examples
+                # "65k spectra, most common sources: SMASS, Gaia, most common shortbib: ..."
+                # "most common asteroid: ..."
+                # Make full width,
+
     if uploaded_files:
         with st.expander("Optional: Define Targets"):
             st.markdown(
-                "For each spectrum, define the asteroidal target by providing an identifier."
+                "For each spectrum, define the asteroidal target by providing an identifier. "
+                "The benefits of doing so are described [here](https://classy.readthedocs.io/en/latest/core.html#assigning-a-target)."
             )
             targets = {}
             for uploaded_file in uploaded_files:
@@ -137,8 +152,6 @@ with left:
             st.markdown("To be implemented.")
 
 with right:
-    # st.empty()
-    #
     if uploaded_files:
         if uploaded_files:
             p = figure(
@@ -202,8 +215,9 @@ with left:
 
     Example queries:
 
+    ``ceres`` - All spectra of (1) Ceres
 
-    ``4 --wave_min 0.45 --wave_max 2.45 L`` - VisNIR spectra of (4) Vesta
+    ``4 --wave_min 0.45 --wave_max 2.45`` - VisNIR spectra of (4) Vesta
 
     ``--source MITHNEOS --taxonomy L`` - All spectra of known L-types in MITHNEOS
     """
@@ -279,9 +293,27 @@ with left:
 
 with right:
     if not idx_selected.empty:
+        # Not setting target to avoid slow query
+        # We just need name, number, albedo
         spectra_lit = classy.Spectra(
-            classy.index.data.load_spectra(idx_selected, skip_target=False)
+            classy.index.data.load_spectra(idx_selected, skip_target=True)
         )
+
+        idx_selected = idx_selected.reset_index()
+        for i, spec in enumerate(spectra_lit):
+            spec.target = rocks.Rock(
+                idx_selected["sso_name"].values[i],
+                ssocard={
+                    "name": idx_selected["name"].values[i],
+                    "number": idx_selected["number"].values[i],
+                    "parameters": {
+                        "physical": {
+                            "albedo": {"value": idx_selected["albedo"].values[i]}
+                        }
+                    },
+                },
+            )
+
         p = figure(
             x_axis_label="Wavelength / μm",
             y_axis_label="Reflectance",
