@@ -11,6 +11,7 @@ st.set_page_config(layout="wide")
 
 os.environ["CLASSY_DATA_DIR"] = "./data/"
 os.environ["ROCKS_CACHE_DIR"] = "no-cache"
+rocks.config.CACHELESS = True
 import classy  # noqa
 
 spectra = []
