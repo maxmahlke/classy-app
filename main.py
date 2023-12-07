@@ -15,7 +15,6 @@ rocks.config.CACHELESS = True
 import classy  # noqa
 
 classy.config.APP_MODE = True
-print(classy.config.APP_MODE)
 
 spectra = []
 spectra_lit = []
@@ -222,7 +221,10 @@ with left:
     ``--source MITHNEOS --taxonomy L`` - All spectra of known L-types in MITHNEOS
     """
 
-    with st.expander("Query and select"):
+    idx = classy.index.load()
+    idx_selected = pd.DataFrame()
+
+    with st.expander(f"Query and select from {len(idx)} Spectra"):
         input = st.text_input(
             "Query the `classy` spectra database",
             value="",
@@ -238,8 +240,6 @@ with left:
             disabled=False,
             label_visibility="visible",
         )
-
-        idx_selected = pd.DataFrame()
 
         # Live Update
         if input:
@@ -272,24 +272,38 @@ with left:
                 hide_index=True,
             )
             idx_selected = idx[idx.select]
+        else:
+            idx["select"] = False
+            idx = st.data_editor(
+                idx,
+                column_order=[
+                    "select",
+                    "name",
+                    "number",
+                    "wave_min",
+                    "wave_max",
+                    "shortbib",
+                    "source",
+                ],
+                hide_index=True,
+            )
 
     if not idx_selected.empty:
-        st.write(
+        with st.expander(
             f"Selected {len(idx_selected)} spectr{'a' if len(idx_selected) != 1 else 'um'}."
-        )
-
-        st.dataframe(
-            idx_selected,
-            column_order=[
-                "name",
-                "number",
-                "wave_min",
-                "wave_max",
-                "shortbib",
-                "source",
-            ],
-            hide_index=True,
-        )
+        ):
+            st.dataframe(
+                idx_selected,
+                column_order=[
+                    "name",
+                    "number",
+                    "wave_min",
+                    "wave_max",
+                    "shortbib",
+                    "source",
+                ],
+                hide_index=True,
+            )
 
 with right:
     if not idx_selected.empty:
@@ -312,6 +326,7 @@ with right:
                         }
                     },
                 },
+                skip_id_check=True,
             )
 
         p = figure(
