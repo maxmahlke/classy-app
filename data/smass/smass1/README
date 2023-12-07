@@ -1,0 +1,44 @@
+                               Data files from the MIT:
+                 Small Main-belt Asteroid Spectroscopic Survey (SMASS) 
+
+HOW TO ACQUIRE FILES:
+
+     ftp astron.mit.edu
+     login: anonymous
+
+     cd pickup/SMASS
+
+     get README   (this file)
+
+
+EXPLANATION OF FILES:
+
+For each available numbered asteroid, there is a file a####, where #### 
+refers to the asteroid number.  
+
+For each available unnumbered asteroid, there is a file p%%%%%%% where %%%%%%
+refers to the provisional designation.
+
+
+The first column      The second column               The third column 
+is the wavelength     is the relative reflectance     presents an error bar
+(angstroms)           value, normalized to unity      value (if available).
+                      at 5500 angstroms. 
+
+A summary of published observations is also available in the file:
+TableI.txt
+
+
+When using these data, please cite the following reference:
+
+Xu, S., Binzel, R. P., Burbine, T. H., Bus, S. J. (1995)
+"Small Main-Belt Asteroid Spectroscopic Survey: Initial Results"
+Icarus 115, 1-35.
+
+Contact person:
+Richard P. Binzel
+MIT 54-410
+Cambridge, MA 02139
+rpb@astron.mit.edu
+
+

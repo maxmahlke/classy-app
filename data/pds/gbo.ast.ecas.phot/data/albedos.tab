@@ -1,0 +1,951 @@
+      1 Ceres              - - -      0.061 - 
+      2 Pallas             - - -      0.093 1 
+      3 Juno               - - -      0.138 - 
+      4 Vesta              - - -      0.249 - 
+      5 Astraea            - - -      0.125 1 
+      6 Hebe               - - -      0.162 1 
+      7 Iris               - - -      0.196 1 
+      8 Flora              - - -      0.133 1 
+      9 Metis              - - -      0.187 - 
+     10 Hygiea             - - -      0.050 1 
+     11 Parthenope         - - -      0.116 1 
+     12 Victoria           - - -      0.098 1 
+     13 Egeria             - - -      0.055 1 
+     14 Irene              - - -      0.159 1 
+     15 Eunomia            - - -      0.163 1 
+     16 Psyche             - - -      0.094 1 
+     17 Thetis             - - -      0.108 1 
+     18 Melpomene          - - -      0.149 1 
+     19 Fortuna            - - -      0.043 - 
+     20 Massalia           - - -      0.189 1 
+     21 Lutetia            - - -      0.106 1 
+     22 Kalliope           - - -      0.108 1 
+     23 Thalia             - - -      0.200 1 
+     24 Themis             - - -      0.059 - 
+     25 Phocaea            - - -      0.194 1 
+     26 Proserpina         - - -      0.231 - 
+     27 Euterpe            - - -      0.162 1 
+     28 Bellona            - - -      0.120 1 
+     29 Amphitrite         - - -      0.147 1 
+     30 Urania             - - -      0.152 1 
+     31 Euphrosyne         - - -      - - - - 
+     32 Pomona             - - -      - - - - 
+     33 Polyhymnia         - - -      0.203 - 
+     34 Circe              - - -      0.043 1 
+     35 Leukothea          - - -      0.023 - 
+     36 Atalante           - - -      0.039 1 
+     37 Fides              - - -      0.206 1 
+     38 Leda               - - -      0.039 - 
+     39 Laetitia           - - -      0.168 1 
+     40 Harmonia           - - -      0.148 1 
+     41 Daphne             - - -      0.045 1 
+     42 Isis               - - -      0.159 1 
+     43 Ariadne            - - -      0.130 1 
+     44 Nysa               - - -      0.425 - 
+     45 Eugenia            - - -      0.030 1 
+     46 Hestia             - - -      0.034 - 
+     47 Aglaja             - - -      0.035 1 
+     48 Doris              - - -      - - - - 
+     49 Pales              - - -      - - - - 
+     50 Virginia           - - -      - - - - 
+     51 Nemausa            - - -      0.062 1 
+     52 Europa             - - -      0.047 1 
+     53 Kalypso            - - -      - - - - 
+     54 Alexandra          - - -      0.037 1 
+     55 Pandora            - - -      0.132 - 
+     56 Melete             - - -      0.031 1 
+     57 Mnemosyne          - - -      - - - - 
+     58 Concordia          - - -      - - - - 
+     59 Elpis              - - -      0.039 - 
+     60 Echo               - - -      0.194 1 
+     61 Danae              - - -      0.184 2 
+     62 Erato              - - -      0.102 - 
+     63 Ausonia            - - -      0.159 1 
+     64 Angelina           - - -      0.396 - 
+     65 Cybele             - - -      0.027 1 
+     66 Maja               - - -      0.029 1 
+     67 Asia               - - -      0.194 1 
+     68 Leto               - - -      0.147 1 
+     69 Hesperia           - - -      0.183 1 
+     70 Panopaea           - - -      0.036 1 
+     71 Niobe              - - -      - - - - 
+     72 Feronia            - - -      0.039 1 
+     73 Klytia             - - -      - - - - 
+     74 Galatea            - - -      - - - - 
+     75 Eurydike           - - -      0.100 2 
+     76 Freia              - - -      0.034 - 
+     77 Frigga             - - -      0.115 1 
+     78 Diana              - - -      - - - - 
+     79 Eurynome           - - -      0.145 1 
+     80 Sappho             - - -      0.131 1 
+     81 Terpsichore        - - -      - - - - 
+     82 Alkmene            - - -      0.169 1 
+     83 Beatrix            - - -      - - - - 
+     84 Klio               - - -      0.032 1 
+     85 Io                 - - -      0.054 1 
+     86 Semele             - - -      - - - - 
+     87 Sylvia             - - -      0.030 2 
+     88 Thisbe             - - -      0.045 1 
+     89 Julia              - - -      0.114 1 
+     90 Antiope            - - -      0.046 - 
+     91 Aegina             - - -      0.035 1 
+     92 Undina             - - -      - - - - 
+     93 Minerva            - - -      0.044 1 
+     94 Aurora             - - -      0.036 1 
+     95 Arethusa           - - -      0.019 1 
+     96 Aegle              - - -      - - - - 
+     97 Klotho             - - -      0.121 1 
+     98 Ianthe             - - -      - - - - 
+     99 Dike               - - -      - - - - 
+    100 Hekate             - - -      - - - - 
+    101 Helena             - - -      0.172 - 
+    102 Miriam             - - -      0.038 - 
+    103 Hera               - - -      0.131 1 
+    104 Klymene            - - -      - - - - 
+    105 Artemis            - - -      0.038 1 
+    106 Dione              - - -      0.070 1 
+    107 Camilla            - - -      0.051 1 
+    108 Hecuba             - - -      0.148 - 
+    109 Felicitas          - - -      0.062 1 
+    110 Lydia              - - -      0.182 1 
+    111 Ate                - - -      0.046 2 
+    112 Iphigenia          - - -      - - - - 
+    113 Amalthea           - - -      0.244 1 
+    114 Kassandra          - - -      - - - - 
+    115 Thyra              - - -      0.162 1 
+    116 Sirona             - - -      0.175 - 
+    117 Lomia              - - -      - - - - 
+    118 Peitho             - - -      - - - - 
+    119 Althaea            - - -      0.157 - 
+    120 Lachesis           - - -      0.037 1 
+    121 Hermione           - - -      0.038 - 
+    122 Gerda              - - -      - - - - 
+    123 Brunhild           - - -      0.168 1 
+    124 Alkeste            - - -      0.152 1 
+    125 Liberatrix         - - -      0.190 - 
+    126 Velleda            - - -      - - - - 
+    127 Johanna            - - -      - - - - 
+    128 Nemesis            - - -      0.034 - 
+    129 Antigone           - - -      0.164 1 
+    130 Elektra            - - -      0.067 1 
+    131 Vala               - - -      0.128 1 
+    132 Aethra             - - -      0.203 - 
+    133 Cyrene             - - -      - - - - 
+    134 Sophrosyne         - - -      - - - - 
+    135 Hertha             - - -      0.124 - 
+    136 Austria            - - -      0.104 - 
+    137 Meliboea           - - -      0.038 1 
+    138 Tolosa             - - -      - - - - 
+    139 Juewa              - - -      0.034 1 
+    140 Siwa               - - -      0.057 1 
+    141 Lumen              - - -      0.023 - 
+    142 Polana             - - -      0.039 1 
+    143 Adria              - - -      - - - - 
+    144 Vibilia            - - -      0.054 1 
+    145 Adeona             - - -      - - - - 
+    146 Lucina             - - -      0.043 1 
+    147 Protogeneia        - - -      0.021 - 
+    148 Gallia             - - -      - - - - 
+    149 Medusa             - - -      - - - - 
+    150 Nuwa               - - -      - - - - 
+    151 Abundantia         - - -      0.137 2 
+    152 Atala              - - -      - - - - 
+    153 Hilda              - - -      0.038 - 
+    155 Scylla             - - -      - - - - 
+    156 Xanthippe          - - -      - - - - 
+    158 Koronis            - - -      0.159 1 
+    159 Aemilia            - - -      0.036 1 
+    160 Una                - - -      - - - - 
+    161 Athor              - - -      0.173 2 
+    162 Laurentia          - - -      - - - - 
+    163 Erigone            - - -      - - - - 
+    164 Eva                - - -      - - - - 
+    165 Loreley            - - -      - - - - 
+    166 Rhodope            - - -      - - - - 
+    167 Urda               - - -      - - - - 
+    168 Sibylla            - - -      0.039 - 
+    169 Zelia              - - -      - - - - 
+    170 Maria              - - -      0.139 - 
+    171 Ophelia            - - -      0.051 - 
+    172 Baucis             - - -      0.097 1 
+    173 Ino                - - -      0.037 - 
+    174 Phaedra            - - -      - - - - 
+    175 Andromache         - - -      0.057 - 
+    177 Irma               - - -      - - - - 
+    178 Belisana           - - -      - - - - 
+    179 Klytaemnestra      - - -      0.136 2 
+    180 Garumna            - - -      - - - - 
+    181 Eucharis           - - -      - - - - 
+    182 Elsa               - - -      0.223 1 
+    183 Istria             - - -      - - - - 
+    184 Dejopeja           - - -      - - - - 
+    185 Eunike             - - -      - - - - 
+    186 Celuta             - - -      0.141 - 
+    187 Lamberta           - - -      - - - - 
+    188 Menippe            - - -      - - - - 
+    189 Phthia             - - -      0.141 1 
+    190 Ismene             - - -      0.041 - 
+    191 Kolga              - - -      - - - - 
+    192 Nausikaa           - - -      0.185 1 
+    194 Prokne             - - -      0.033 1 
+    195 Eurykleia          - - -      - - - - 
+    196 Philomela          - - -      0.126 1 
+    197 Arete              - - -      - - - - 
+    198 Ampella            - - -      - - - - 
+    200 Dynamene           - - -      0.040 2 
+    201 Penelope           - - -      0.141 - 
+    202 Chryseis           - - -      - - - - 
+    203 Pompeja            - - -      - - - - 
+    204 Kallisto           - - -      0.146 1 
+    205 Martha             - - -      0.039 - 
+    206 Hersilia           - - -      - - - - 
+    207 Hedda              - - -      - - - - 
+    208 Lacrimosa          - - -      0.190 1 
+    209 Dido               - - -      0.027 2 
+    210 Isabella           - - -      - - - - 
+    211 Isolda             - - -      0.034 1 
+    212 Medea              - - -      - - - - 
+    213 Lilaea             - - -      0.060 - 
+    214 Aschera            - - -      0.495 2 
+    215 Oenone             - - -      - - - - 
+    216 Kleopatra          - - -      0.154 - 
+    218 Bianca             - - -      - - - - 
+    219 Thusnelda          - - -      0.137 1 
+    221 Eos                - - -      0.104 2 
+    222 Lucia              - - -      - - - - 
+    223 Rosa               - - -      - - - - 
+    224 Oceana             - - -      0.097 1 
+    225 Henrietta          - - -      - - - - 
+    228 Agathe             - - -      - - - - 
+    229 Adelinda           - - -      - - - - 
+    230 Athamantis         - - -      0.088 1 
+    232 Russia             - - -      - - - - 
+    233 Asterope           - - -      - - - - 
+    234 Barbara            - - -      - - - - 
+    235 Carolina           - - -      - - - - 
+    236 Honoria            - - -      0.104 2 
+    237 Coelestina         - - -      - - - - 
+    238 Hypatia            - - -      0.036 1 
+    240 Vanadis            - - -      - - - - 
+    241 Germania           - - -      0.032 1 
+    243 Ida                - - -      0.193 - 
+    245 Vera               - - -      - - - - 
+    246 Asporina           - - -      0.122 2 
+    247 Eukrate            - - -      0.039 1 
+    250 Bettina            - - -      0.186 - 
+    254 Augusta            - - -      - - - - 
+    255 Oppavia            - - -      - - - - 
+    257 Silesia            - - -      - - - - 
+    258 Tyche              - - -      - - - - 
+    259 Aletheia           - - -      0.030 - 
+    260 Huberta            - - -      - - - - 
+    261 Prymno             - - -      0.129 - 
+    262 Valda              - - -      0.126 2 
+    264 Libussa            - - -      0.149 1 
+    266 Aline              - - -      - - - - 
+    267 Tirza              - - -      - - - - 
+    268 Adorea             - - -      0.046 - 
+    270 Anahita            - - -      0.163 1 
+    271 Penthesilea        - - -      0.041 - 
+    273 Atropos            - - -      - - - - 
+    275 Sapientia          - - -      - - - - 
+    276 Adelheid           - - -      - - - - 
+    277 Elvira             - - -      - - - - 
+    279 Thule              - - -      0.033 - 
+    281 Lucretia           - - -      0.133 - 
+    282 Clorinde           - - -      - - - - 
+    283 Emma               - - -      - - - - 
+    284 Amalia             - - -      - - - - 
+    286 Iclea              - - -      - - - - 
+    287 Nephthys           - - -      - - - - 
+    288 Glauke             - - -      - - - - 
+    289 Nenetta            - - -      0.260 - 
+    293 Brasilia           - - -      - - - - 
+    295 Theresia           - - -      - - - - 
+    296 Phaetusa           - - -      - - - - 
+    302 Clarissa           - - -      0.055 2 
+    304 Olga               - - -      - - - - 
+    305 Gordonia           - - -      - - - - 
+    306 Unitas             - - -      - - - - 
+    307 Nike               - - -      - - - - 
+    308 Polyxo             - - -      0.042 1 
+    311 Claudia            - - -      0.220 - 
+    312 Pierretta          - - -      0.139 2 
+    313 Chaldaea           - - -      0.033 1 
+    317 Roxane             - - -      0.398 - 
+    318 Magdalena          - - -      - - - - 
+    321 Florentina         - - -      - - - - 
+    322 Phaeo              - - -      - - - - 
+    323 Brucia             - - -      - - - - 
+    324 Bamberga           - - -      0.040 1 
+    325 Heidelberga        - - -      0.066 - 
+    326 Tamara             - - -      0.046 1 
+    328 Gudrun             - - -      - - - - 
+    329 Svea               - - -      - - - - 
+    331 Etheridgea         - - -      - - - - 
+    333 Badenia            - - -      0.033 - 
+    334 Chicago            - - -      - - - - 
+    335 Roberta            - - -      0.039 - 
+    336 Lacadiera          - - -      0.038 2 
+    337 Devosa             - - -      - - - - 
+    338 Budrosa            - - -      0.072 - 
+    339 Dorothea           - - -      0.109 1 
+    341 California         - - -      0.224 - 
+    342 Endymion           - - -      - - - - 
+    343 Ostara             - - -      - - - - 
+    344 Desiderata         - - -      - - - - 
+    345 Tercidina          - - -      - - - - 
+    346 Hermentaria        - - -      - - - - 
+    347 Pariana            - - -      0.154 - 
+    349 Dembowska          - - -      0.249 - 
+    350 Ornamenta          - - -      - - - - 
+    351 Yrsa               - - -      - - - - 
+    352 Gisela             - - -      - - - - 
+    354 Eleonora           - - -      0.165 1 
+    356 Liguria            - - -      0.028 1 
+    357 Ninina             - - -      - - - - 
+    359 Georgia            - - -      - - - - 
+    360 Carlova            - - -      - - - - 
+    361 Bononia            - - -      0.024 - 
+    362 Havnia             - - -      - - - - 
+    363 Padua              - - -      - - - - 
+    364 Isara              - - -      - - - - 
+    365 Corduba            - - -      - - - - 
+    368 Haidea             - - -      0.022 - 
+    369 Aeria              - - -      0.113 - 
+    370 Modestia           - - -      - - - - 
+    371 Bohemia            - - -      - - - - 
+    373 Melusina           - - -      - - - - 
+    374 Burgundia          - - -      - - - - 
+    375 Ursula             - - -      - - - - 
+    376 Geometria          - - -      - - - - 
+    377 Campania           - - -      0.036 - 
+    378 Holmia             - - -      - - - - 
+    379 Huenna             - - -      0.070 - 
+    380 Fiducia            - - -      - - - - 
+    381 Myrrha             - - -      - - - - 
+    382 Dodona             - - -      0.120 - 
+    383 Janina             - - -      0.101 - 
+    384 Burdigala          - - -      - - - - 
+    385 Ilmatar            - - -      - - - - 
+    386 Siegena            - - -      0.038 - 
+    387 Aquitania          - - -      - - - - 
+    388 Charybdis          - - -      0.038 2 
+    389 Industria          - - -      - - - - 
+    390 Alma               - - -      - - - - 
+    393 Lampetia           - - -      - - - - 
+    394 Arduina            - - -      - - - - 
+    395 Delia              - - -      - - - - 
+    397 Vienna             - - -      0.099 1 
+    402 Chloe              - - -      - - - - 
+    403 Cyane              - - -      - - - - 
+    404 Arsinoe            - - -      0.034 1 
+    405 Thia               - - -      - - - - 
+    406 Erna               - - -      0.025 - 
+    407 Arachne            - - -      - - - - 
+    409 Aspasia            - - -      - - - - 
+    410 Chloris            - - -      0.040 1 
+    413 Edburga            - - -      0.109 - 
+    414 Liriope            - - -      0.035 - 
+    415 Palatia            - - -      0.032 1 
+    416 Vaticana           - - -      - - - - 
+    417 Suevia             - - -      - - - - 
+    418 Alemannia          - - -      0.115 2 
+    419 Aurelia            - - -      0.034 2 
+    420 Bertholda          - - -      0.024 - 
+    421 Zahringia          - - -      - - - - 
+    422 Berolina           - - -      - - - - 
+    423 Diotima            - - -      - - - - 
+    426 Hippo              - - -      - - - - 
+    429 Lotis              - - -      - - - - 
+    431 Nephele            - - -      0.073 - 
+    432 Pythia             - - -      - - - - 
+    433 Eros               - - -      0.180 1 
+    434 Hungaria           - - -      0.441 2 
+    435 Ella               - - -      - - - - 
+    438 Zeuxo              - - -      - - - - 
+    439 Ohio               - - -      - - - - 
+    441 Bathilde           - - -      0.140 1 
+    442 Eichsfeldia        - - -      - - - - 
+    443 Photographica      - - -      0.112 - 
+    444 Gyptis             - - -      0.037 1 
+    445 Edna               - - -      - - - - 
+    446 Aeternitas         - - -      - - - - 
+    447 Valentine          - - -      0.050 - 
+    448 Natalie            - - -      - - - - 
+    449 Hamburga           - - -      - - - - 
+    450 Brigitta           - - -      - - - - 
+    451 Patientia          - - -      0.039 1 
+    454 Mathesis           - - -      - - - - 
+    455 Bruchsalia         - - -      0.033 1 
+    458 Hercynia           - - -      - - - - 
+    459 Signe              - - -      - - - - 
+    461 Saskia             - - -      - - - - 
+    462 Eriphyla           - - -      0.269 1 
+    463 Lola               - - -      - - - - 
+    464 Megaira            - - -      - - - - 
+    466 Tisiphone          - - -      - - - - 
+    468 Lina               - - -      - - - - 
+    469 Argentina          - - -      - - - - 
+    470 Kilia              - - -      - - - - 
+    471 Papagena           - - -      0.163 1 
+    472 Roma               - - -      - - - - 
+    475 Ocllo              - - -      - - - - 
+    476 Hedwig             - - -      0.039 1 
+    477 Italia             - - -      - - - - 
+    478 Tergeste           - - -      - - - - 
+    480 Hansa              - - -      - - - - 
+    481 Emita              - - -      - - - - 
+    482 Petrina            - - -      - - - - 
+    483 Seppina            - - -      0.114 - 
+    487 Venetia            - - -      - - - - 
+    488 Kreusa             - - -      - - - - 
+    489 Comacina           - - -      - - - - 
+    490 Veritas            - - -      - - - - 
+    494 Virtus             - - -      - - - - 
+    496 Gryphia            - - -      0.159 - 
+    497 Iva                - - -      0.152 1 
+    498 Tokio              - - -      0.076 1 
+    499 Venusia            - - -      0.025 - 
+    502 Sigune             - - -      - - - - 
+    503 Evelyn             - - -      - - - - 
+    505 Cava               - - -      0.031 - 
+    506 Marion             - - -      - - - - 
+    508 Princetonia        - - -      - - - - 
+    509 Iolanda            - - -      - - - - 
+    510 Mabella            - - -      0.046 2 
+    511 Davida             - - -      0.040 1 
+    512 Taurinensis        - - -      0.144 - 
+    513 Centesima          - - -      0.116 - 
+    514 Armida             - - -      - - - - 
+    515 Athalia            - - -      0.034 - 
+    516 Amherstia          - - -      0.173 1 
+    517 Edith              - - -      - - - - 
+    519 Sylvania           - - -      - - - - 
+    520 Franziska          - - -      - - - - 
+    521 Brixia             - - -      - - - - 
+    522 Helga              - - -      - - - - 
+    524 Fidelio            - - -      - - - - 
+    525 Adelaide           - - -      - - - - 
+    526 Jena               - - -      0.079 - 
+    529 Preziosa           - - -      0.213 - 
+    530 Turandot           - - -      0.035 - 
+    532 Herculina          - - -      0.160 1 
+    533 Sara               - - -      - - - - 
+    534 Nassovia           - - -      0.183 1 
+    535 Montague           - - -      - - - - 
+    536 Merapi             - - -      - - - - 
+    537 Pauly              - - -      0.023 1 
+    540 Rosamunde          - - -      - - - - 
+    542 Susanna            - - -      - - - - 
+    545 Messalina          - - -      - - - - 
+    546 Herodias           - - -      0.036 2 
+    547 Praxedis           - - -      - - - - 
+    548 Kressida           - - -      - - - - 
+    549 Jessonda           - - -      - - - - 
+    550 Senta              - - -      0.086 1 
+    551 Ortrud             - - -      - - - - 
+    554 Peraga             - - -      0.039 1 
+    556 Phyllis            - - -      - - - - 
+    558 Carmen             - - -      0.094 1 
+    559 Nanon              - - -      - - - - 
+    561 Ingwelde           - - -      - - - - 
+    562 Salome             - - -      - - - - 
+    563 Suleika            - - -      0.131 1 
+    564 Dudu               - - -      - - - - 
+    565 Marbachia          - - -      - - - - 
+    566 Stereoskopia       - - -      0.031 - 
+    567 Eleutheria         - - -      - - - - 
+    569 Misa               - - -      - - - - 
+    570 Kythera            - - -      - - - - 
+    571 Dulcinea           - - -      - - - - 
+    572 Rebekka            - - -      - - - - 
+    579 Sidonia            - - -      - - - - 
+    582 Olympia            - - -      - - - - 
+    583 Klotilde           - - -      - - - - 
+    584 Semiramis          - - -      0.202 1 
+    585 Bilkis             - - -      - - - - 
+    586 Thekla             - - -      - - - - 
+    588 Achilles           - - -      - - - - 
+    589 Croatia            - - -      - - - - 
+    591 Irmgard            - - -      - - - - 
+    593 Titania            - - -      - - - - 
+    596 Scheila            - - -      0.021 1 
+    598 Octavia            - - -      - - - - 
+    599 Luisa              - - -      - - - - 
+    601 Nerthus            - - -      - - - - 
+    602 Marianna           - - -      0.032 1 
+    606 Brangane           - - -      - - - - 
+    611 Valeria            - - -      - - - - 
+    613 Ginevra            - - -      0.026 - 
+    615 Roswitha           - - -      - - - - 
+    616 Elly               - - -      0.193 - 
+    617 Patroclus          - - -      0.027 1 
+    618 Elfriede           - - -      - - - - 
+    619 Triberga           - - -      - - - - 
+    620 Drakonia           - - -      0.353 - 
+    621 Werdandi           - - -      - - - - 
+    622 Esther             - - -      - - - - 
+    623 Chimaera           - - -      - - - - 
+    624 Hektor             - - -      0.025 1 
+    626 Notburga           - - -      - - - - 
+    627 Charis             - - -      - - - - 
+    628 Christine          - - -      - - - - 
+    631 Philippina         - - -      - - - - 
+    633 Zelima             - - -      0.082 1 
+    635 Vundtia            - - -      - - - - 
+    639 Latona             - - -      0.138 - 
+    640 Brambilla          - - -      0.041 - 
+    642 Clara              - - -      - - - - 
+    643 Scheherezade       - - -      0.034 - 
+    644 Cosima             - - -      - - - - 
+    645 Agrippina          - - -      - - - - 
+    647 Adelgunde          - - -      - - - - 
+    648 Pippa              - - -      - - - - 
+    650 Amalasuntha        - - -      0.031 - 
+    651 Antikleia          - - -      - - - - 
+    653 Berenike           - - -      - - - - 
+    654 Zelinda            - - -      0.032 2 
+    658 Asteria            - - -      - - - - 
+    659 Nestor             - - -      - - - - 
+    660 Crescentia         - - -      0.170 - 
+    661 Cloelia            - - -      0.081 1 
+    663 Gerlinde           - - -      - - - - 
+    664 Judith             - - -      - - - - 
+    669 Kypria             - - -      - - - - 
+    673 Edda               - - -      - - - - 
+    674 Rachele            - - -      0.107 1 
+    675 Ludmilla           - - -      - - - - 
+    679 Pax                - - -      0.060 1 
+    680 Genoveva           - - -      - - - - 
+    686 Gersuind           - - -      - - - - 
+    687 Tinette            - - -      - - - - 
+    689 Zita               - - -      - - - - 
+    690 Wratislavia        - - -      0.061 - 
+    691 Lehigh             - - -      - - - - 
+    692 Hippodamia         - - -      0.142 - 
+    693 Zerbinetta         - - -      - - - - 
+    694 Ekard              - - -      0.029 1 
+    695 Bella              - - -      0.187 - 
+    697 Galilea            - - -      - - - - 
+    699 Hela               - - -      0.242 - 
+    701 Oriola             - - -      - - - - 
+    702 Alauda             - - -      - - - - 
+    704 Interamnia         - - -      0.043 1 
+    705 Erminia            - - -      - - - - 
+    708 Raphaela           - - -      - - - - 
+    709 Fringilla          - - -      - - - - 
+    712 Boliviana          - - -      - - - - 
+    713 Luscinia           - - -      0.027 - 
+    714 Ulula              - - -      0.139 - 
+    716 Berkeley           - - -      - - - - 
+    717 Wisibada           - - -      - - - - 
+    720 Bohlinia           - - -      0.135 1 
+    721 Tabora             - - -      0.034 - 
+    725 Amanda             - - -      - - - - 
+    727 Nipponia           - - -      - - - - 
+    729 Watsonia           - - -      - - - - 
+    731 Sorga              - - -      - - - - 
+    733 Mocia              - - -      - - - - 
+    735 Marghanna          - - -      - - - - 
+    736 Harvard            - - -      - - - - 
+    737 Arequipa           - - -      0.193 1 
+    738 Alagasta           - - -      - - - - 
+    739 Mandeville         - - -      - - - - 
+    740 Cantabia           - - -      - - - - 
+    742 Edisona            - - -      0.086 1 
+    744 Aguntina           - - -      - - - - 
+    746 Marlu              - - -      0.024 - 
+    747 Winchester         - - -      0.027 1 
+    748 Simeisa            - - -      0.031 - 
+    749 Malzovia           - - -      - - - - 
+    750 Oskar              - - -      0.035 - 
+    751 Faina              - - -      - - - - 
+    753 Tiflis             - - -      - - - - 
+    754 Malabar            - - -      - - - - 
+    755 Quintilla          - - -      0.135 - 
+    757 Portlandia         - - -      - - - - 
+    758 Mancunia           - - -      - - - - 
+    760 Massinga           - - -      - - - - 
+    761 Brendelia          - - -      - - - - 
+    762 Pulcova            - - -      - - - - 
+    764 Gedania            - - -      - - - - 
+    766 Moguntia           - - -      0.083 - 
+    768 Struveana          - - -      - - - - 
+    770 Bali               - - -      - - - - 
+    771 Libera             - - -      - - - - 
+    772 Tanete             - - -      - - - - 
+    773 Irmintraud         - - -      0.028 - 
+    775 Lumiere            - - -      - - - - 
+    776 Berbericia         - - -      - - - - 
+    778 Theobalda          - - -      0.051 - 
+    785 Zwetana            - - -      0.089 - 
+    786 Bredichina         - - -      - - - - 
+    790 Pretoria           - - -      0.026 1 
+    791 Ani                - - -      - - - - 
+    793 Arizona            - - -      - - - - 
+    796 Sarita             - - -      - - - - 
+    797 Montana            - - -      - - - - 
+    798 Ruth               - - -      0.066 1 
+    800 Kressmannia        - - -      - - - - 
+    801 Helwerthia         - - -      - - - - 
+    804 Hispania           - - -      0.056 1 
+    805 Hormuthia          - - -      - - - - 
+    807 Ceraskia           - - -      - - - - 
+    811 Nauheima           - - -      - - - - 
+    814 Tauris             - - -      - - - - 
+    821 Fanny              - - -      - - - - 
+    822 Lalage             - - -      - - - - 
+    824 Anastasia          - - -      - - - - 
+    825 Tanina             - - -      - - - - 
+    828 Lindemannia        - - -      - - - - 
+    830 Petropolitana      - - -      0.112 1 
+    834 Burnhamia          - - -      - - - - 
+    838 Seraphina          - - -      0.025 - 
+    846 Lipperta           - - -      - - - - 
+    847 Agnia              - - -      - - - - 
+    849 Ara                - - -      0.076 - 
+    851 Zeissia            - - -      - - - - 
+    853 Nansenia           - - -      - - - - 
+    857 Glasenappia        - - -      0.199 - 
+    860 Ursina             - - -      0.148 - 
+    863 Benkoela           - - -      0.290 1 
+    864 Aase               A921 SB    - - - - 
+    868 Lova               - - -      - - - - 
+    872 Holda              - - -      0.106 - 
+    873 Mechthild          - - -      0.030 - 
+    876 Scott              - - -      - - - - 
+    877 Walkure            - - -      0.044 - 
+    880 Herba              - - -      - - - - 
+    883 Matterania         - - -      - - - - 
+    884 Priamus            - - -      0.042 - 
+    887 Alinda             - - -      0.180 1 
+    888 Parysatis          - - -      - - - - 
+    890 Waltraut           - - -      0.061 1 
+    893 Leopoldina         - - -      - - - - 
+    897 Lysistrata         - - -      0.164 - 
+    899 Jokaste            - - -      - - - - 
+    901 Brunsia            - - -      - - - - 
+    907 Rhoda              - - -      - - - - 
+    909 Ulla               - - -      - - - - 
+    911 Agamemnon          - - -      0.039 1 
+    914 Palisana           - - -      - - - - 
+    920 Rogeria            - - -      - - - - 
+    924 Toni               - - -      - - - - 
+    925 Alphonsina         - - -      - - - - 
+    927 Ratisbona          - - -      - - - - 
+    931 Whittemora         - - -      0.110 - 
+    932 Hooveria           - - -      - - - - 
+    937 Bethgea            - - -      - - - - 
+    939 Isberga            - - -      - - - - 
+    940 Kordula            - - -      - - - - 
+    941 Murray             - - -      - - - - 
+    943 Begonia            - - -      - - - - 
+    944 Hidalgo            - - -      - - - - 
+    945 Barcelona          - - -      - - - - 
+    946 Poesia             - - -      0.055 - 
+    951 Gaspra             - - -      - - - - 
+    954 Li                 - - -      - - - - 
+    958 Asplinda           - - -      0.020 - 
+    962 Aslog              - - -      0.146 - 
+    963 Iduberga           - - -      - - - - 
+    966 Muschi             - - -      - - - - 
+    968 Petunia            - - -      - - - - 
+    969 Leocadia           - - -      - - - - 
+    974 Lioba              - - -      - - - - 
+    975 Perseverantia      - - -      0.153 - 
+    976 Benjamina          - - -      - - - - 
+    977 Philippa           - - -      - - - - 
+    978 Aidamina           - - -      0.023 - 
+    980 Anacostia          - - -      0.124 - 
+    981 Martina            - - -      - - - - 
+    983 Gunila             - - -      - - - - 
+    991 McDonalda          - - -      - - - - 
+    996 Hilaritas          - - -      0.090 - 
+   1001 Gaussia            - - -      0.034 - 
+   1004 Belopolskya        - - -      0.025 - 
+   1011 Laodamia           - - -      0.222 1 
+   1012 Sarema             - - -      0.028 - 
+   1013 Tombecka           - - -      - - - - 
+   1015 Christa            - - -      - - - - 
+   1019 Strackea           - - -      - - - - 
+   1021 Flammario          - - -      - - - - 
+   1023 Thomana            - - -      0.042 - 
+   1025 Riema              - - -      0.556 - 
+   1028 Lydina             - - -      - - - - 
+   1029 La Plata           - - -      - - - - 
+   1031 Arctica            - - -      - - - - 
+   1036 Ganymed            - - -      0.151 - 
+   1038 Tuckia             - - -      0.033 - 
+   1043 Beate              1925 HB    - - - - 
+   1047 Geisha             - - -      - - - - 
+   1048 Feodosia           - - -      - - - - 
+   1052 Belgica            1925 VD    - - - - 
+   1061 Paeonia            1925 TB    - - - - 
+   1075 Helina             1926 SC    0.102 1 
+   1076 Viola              1926 TE    0.044 - 
+   1078 Mentha             1926 XB    - - - - 
+   1079 Mimosa             1927 AD    - - - - 
+   1080 Orchis             1927 QB    - - - - 
+   1082 Pirola             1927 UC    - - - - 
+   1087 Arabis             1927 RD    0.051 1 
+   1088 Mitaka             1927 WA    - - - - 
+   1093 Freda              1925 LA    - - - - 
+   1102 Pepita             1928 VA    - - - - 
+   1103 Sequoia            1928 VB    0.423 - 
+   1105 Fragaria           1929 AB    - - - - 
+   1108 Demeter            1929 KA    - - - - 
+   1109 Tata               1929 CU    - - - - 
+   1111 Reinmuthia         1927 CO    - - - - 
+   1112 Polonia            1928 PE    0.078 - 
+   1124 Stroobantia        1928 TB    - - - - 
+   1127 Mimi               1929 AJ    - - - - 
+   1129 Neujmina           1929 PH    0.091 1 
+   1133 Lugduna            1929 RC1   - - - - 
+   1139 Atami              1929 XE    - - - - 
+   1140 Crimea             1929 YC    - - - - 
+   1143 Odysseus           1930 BH    0.020 - 
+   1144 Oda                1930 BJ    - - - - 
+   1146 Biarmia            1929 JF    - - - - 
+   1148 Rarahu             1929 NA    0.083 1 
+   1154 Astronomia         1927 CB    - - - - 
+   1162 Larissa            1930 AC    0.062 - 
+   1167 Dubiago            1930 PB    0.028 - 
+   1170 Siva               1930 SQ    - - - - 
+   1171 Rusthawelia        1930 TA    0.049 - 
+   1172 Aneas              1930 UA    0.032 - 
+   1173 Anchises           1930 UB    0.042 - 
+   1177 Gonnessia          1930 WA    - - - - 
+   1180 Rita               1931 GE    0.028 - 
+   1185 Nikko              1927 WC    - - - - 
+   1186 Turnera            1929 PL    0.083 1 
+   1199 Geldonia           1931 RF    0.056 1 
+   1208 Troilus            1931 YA    0.026 - 
+   1210 Morosovia          1931 LB    0.087 1 
+   1212 Francette          1931 XC    0.025 - 
+   1215 Boyer              1932 BA    0.233 - 
+   1216 Askania            1932 BL    - - - - 
+   1223 Neckar             1931 TG    0.071 1 
+   1224 Fantasia           1927 SD    - - - - 
+   1235 Schorria           1931 UJ    - - - - 
+   1236 Thais              1931 VX    0.070 - 
+   1241 Dysona             1932 EB1   0.037 2 
+   1245 Calvinia           1932 KF    - - - - 
+   1247 Memoria            1932 QA    - - - - 
+   1249 Rutherfordia       1932 VB    - - - - 
+   1251 Hedera             1933 BE    0.355 - 
+   1252 Celestia           1933 DG    0.211 2 
+   1256 Normannia          1932 PD    0.038 - 
+   1263 Varsavia           1933 FF    - - - - 
+   1266 Tone               1927 BD    0.034 - 
+   1268 Libya              1930 HJ    0.033 2 
+   1269 Rollandia          1930 SH    - - - - 
+   1274 Delportia          1932 WC    - - - - 
+   1275 Cimbria            1932 WG    - - - - 
+   1277 Dolores            1933 HA    - - - - 
+   1280 Baillauda          1933 QB    - - - - 
+   1284 Latvia             1933 OP    - - - - 
+   1286 Banachiewicza      1933 QH    - - - - 
+   1289 Kutaissi           1933 QR    0.158 - 
+   1306 Scythia            1930 OB    - - - - 
+   1307 Cimmeria           1930 UF    - - - - 
+   1310 Villigera          1932 DB    - - - - 
+   1314 Paula              1933 SC    - - - - 
+   1317 Silvretta          1935 RC    - - - - 
+   1326 Losaka             1934 NS    - - - - 
+   1328 Devota             1925 UA    - - - - 
+   1329 Eliane             1933 FL    - - - - 
+   1330 Spiridonia         1925 DB    0.030 2 
+   1331 Solvejg            1933 QS    - - - - 
+   1336 Zeelandia          1934 RW    - - - - 
+   1339 Desagneauxa        1934 XB    - - - - 
+   1341 Edmee              1935 BA    - - - - 
+   1342 Brabantia          1935 CV    - - - - 
+   1345 Potomac            - - -      - - - - 
+   1350 Rosselia           1934 TA    - - - - 
+   1355 Magoeba            1935 HE    - - - - 
+   1357 Khama              1935 ND    - - - - 
+   1359 Prieska            1935 OC    - - - - 
+   1362 Griqua             1935 QG1   0.055 1 
+   1390 Abastumani         1935 TA    0.040 2 
+   1391 Carelia            1936 DA    - - - - 
+   1392 Pierre             1936 FO    - - - - 
+   1401 Lavonne            1935 UD    - - - - 
+   1415 Malautra           1937 EA    - - - - 
+   1416 Renauxa            1937 EC    0.071 1 
+   1418 Fayeta             - - -      - - - - 
+   1422 Stromgrenia        1936 QF    - - - - 
+   1434 Margot             1936 FD1   - - - - 
+   1437 Diomedes           1937 PB    0.021 1 
+   1439 Vogtia             1937 TE    - - - - 
+   1442 Corvina            1937 YF    - - - - 
+   1445 Konkolya           1938 AF    0.033 - 
+   1453 Fennia             1938 ED1   - - - - 
+   1456 Saldanha           1937 NG    - - - - 
+   1461 Jean-Jacques       1937 YL    0.138 2 
+   1467 Mashona            1938 OE    - - - - 
+   1474 Beira              1935 QY    - - - - 
+   1477 Bonsdorffia        1938 CC    - - - - 
+   1479 Inkeri             1938 DE    - - - - 
+   1493 Sigrid             1938 QB    0.037 2 
+   1500 Jyvaskyla          1938 UH    - - - - 
+   1504 Lappeenranta       1939 FM    - - - - 
+   1508 Kemi               1938 UP    - - - - 
+   1509 Esclangona         1938 YG    - - - - 
+   1512 Oulu               1939 FE    0.025 - 
+   1529 Oterma             1938 BC    0.029 - 
+   1532 Inari              1938 SM    - - - - 
+   1533 Saimaa             1939 BD    - - - - 
+   1547 Nele               1929 CZ    - - - - 
+   1556 Wingolfia          1942 AA    - - - - 
+   1564 Srbija             1936 TB    - - - - 
+   1566 Icarus             1949 MA    - - - - 
+   1567 Alikoski           1941 HN    0.033 1 
+   1576 Fabiola            1948 SA    0.076 - 
+   1578 Kirkwood           1951 AT    0.030 - 
+   1579 Herrick            1948 SB    - - - - 
+   1580 Betulia            1950 KA    - - - - 
+   1581 Abanderada         1950 LA1   - - - - 
+   1583 Antilochus         1950 SA    0.027 - 
+   1584 Fuji               1927 CR    - - - - 
+   1595 Tanga              1930 ME    - - - - 
+   1601 Patry              1942 KA    - - - - 
+   1602 Indiana            1950 GF    0.216 - 
+   1604 Tombaugh           1931 FH    - - - - 
+   1606 Jekhovsky          1950 RH    - - - - 
+   1615 Bardwell           1950 BW    0.066 - 
+   1619 Ueta               1953 TA    - - - - 
+   1620 Geographos         1951 RA    0.187 - 
+   1621 Druzhba            1926 TM    - - - - 
+   1625 The NORC           1953 RB    - - - - 
+   1627 Ivar               1929 SH    - - - - 
+   1639 Bower              1951 RB    - - - - 
+   1644 Rafita             1935 YA    - - - - 
+   1648 Shajna             1935 RF    - - - - 
+   1650 Heckmann           1937 TG    0.032 - 
+   1655 Comas Sola         1929 WG    - - - - 
+   1657 Roemera            1961 EA    - - - - 
+   1658 Innes              1953 NA    - - - - 
+   1665 Gaby               1930 DQ    - - - - 
+   1669 Dagmar             1934 RS    0.038 2 
+   1681 Steinmetz          1948 WE    - - - - 
+   1685 Toro               1948 OA    - - - - 
+   1691 Oort               1956 RB    0.047 - 
+   1693 Hertzsprung        1935 LA    - - - - 
+   1694 Kaiser             1934 SB    - - - - 
+   1700 Zvezdara           1940 QC    - - - - 
+   1702 Kalahari           A924 NC    - - - - 
+   1707 Chantal            1932 RL    - - - - 
+   1711 Sandrine           1935 BB    - - - - 
+   1723 Klemola            1936 FX    0.145 - 
+   1724 Vladimir           1932 DC    - - - - 
+   1740 Paavo Nurmi        1939 UA    - - - - 
+   1746 Brouwer            1963 RF    0.036 - 
+   1747 Wright             1947 NH    - - - - 
+   1748 Mauderli           1966 RA    0.028 - 
+   1750 Eckert             1950 NA1   0.126 - 
+   1754 Cunningham         1935 FE    0.022 - 
+   1755 Lorbach            1936 VD    - - - - 
+   1765 Wrubel             1957 XB    - - - - 
+   1767 Lampland           1962 RJ    - - - - 
+   1768 Appenzella         1965 SA    - - - - 
+   1792 Reni               1968 BG    - - - - 
+   1794 Finsen             1970 GA    - - - - 
+   1796 Riga               1966 KB    - - - - 
+   1815 Beethoven          1932 CE1   - - - - 
+   1827 Atkinson           1962 RK    - - - - 
+   1830 Pogson             1968 HA    - - - - 
+   1842 Hynek              1972 AA    - - - - 
+   1862 Apollo             1932 HA    0.210 3 
+   1863 Antinous           1948 EA    0.272 - 
+   1864 Daedalus           1971 FA    - - - - 
+   1865 Cerberus           1971 UA    - - - - 
+   1867 Deiphobus          1971 EA    0.028 - 
+   1902 Shaposhnikov       1972 HU    - - - - 
+   1911 Schubart           1973 UD    0.014 - 
+   1915 Quetzalcoatl       1953 EA    0.250 4 
+   1916 Boreas             1953 RA    - - - - 
+   1919 Clemence           1971 SA    - - - - 
+   1920 Sarmiento          1971 VO    - - - - 
+   1931 Capek              1969 QB    - - - - 
+   1943 Anteros            1973 EC    0.130 5 
+   1952 Hesburgh           1951 JC    - - - - 
+   1963 Bezovec            1975 CB    - - - - 
+   1980 Tezcatlipoca       1950 LA    - - - - 
+   1990 Pilcher            1956 EE    - - - - 
+   2000 Herschel           1960 OA    - - - - 
+   2001 Einstein           1973 EB    - - - - 
+   2010 Chebyshev          1969 TL4   0.069 - 
+   2035 Stearns            1973 SC    0.360 - 
+   2048 Dwornik            1973 QA    0.372 - 
+   2050 Francis            1974 KA    - - - - 
+   2052 Tamriko            1976 UN    - - - - 
+   2060 Chiron             1977 UB    0.110 6 
+   2061 Anza               1960 UA    - - - - 
+   2062 Aten               1976 AA    0.200 1 
+   2067 Aksnes             1936 DD    0.033 - 
+   2081 Sazava             1976 DH    0.064 - 
+   2083 Smither            1973 WB    - - - - 
+   2089 Cetacea            1977 VF    - - - - 
+   2090 Mizuho             1978 EA    - - - - 
+   2099 Opik               1977 VB    - - - - 
+   2100 Ra-Shalom          1978 RA    0.060 7 
+   2111 Tselina            1969 LG    - - - - 
+   2131 Mayall             1975 RA    0.236 - 
+   2134 Dennispalm         1976 YB    - - - - 
+   2139 Makharadze         1970 MC    - - - - 
+   2151 Hadwiger           1977 VX    - - - 9 
+   2156 Kate               A917 SH    - - - - 
+   2196 Ellicott           1965 BC    - - - - 
+   2207 Antenor            1977 QH1   0.026 - 
+   2208 Pushkin            1977 QL3   - - - - 
+   2212 Hephaistos         1978 SB    - - - - 
+   2223 Sarpedon           1977 TL3   0.030 - 
+   2241 Alcathous          1979 WM    0.030 - 
+   2246 Bowell             1979 XH    - - - - 
+   2260 Neoptolemus        1975 WM1   - - - - 
+   2266 Tchaikovsky        1974 VK    - - - - 
+   2272 Montezuma          1972 FA    - - - - 
+   2274 Ehrsson            1976 EA    - - - - 
+   2278 Gotz               1953 GE    - - - - 
+   2279 Barto              1968 DL    - - - - 
+   2311 El Leoncito        1974 TA1   0.023 - 
+   2312 Duboshin           1976 GU2   0.031 - 
+   2340 Hathor             1976 UA    - - - - 
+   2345 Fucik              1974 OS    - - - - 
+   2357 Phereclos          1981 AC    0.035 - 
+   2363 Cebriones          1977 TJ3   0.029 - 
+   2368 Beltrovata         1977 RA    - - - - 
+   2375 Radek              1975 AA    - - - - 
+   2379 Heiskanen          1941 ST    0.059 - 
+   2405 Welch              1963 UF    - - - - 
+   2407 Haug               1973 DH    - - - - 
+   2411 Zellner            1981 JK    - - - - 
+   2422 Perovskaya         1968 HK1   - - - 10
+   2430 Bruce Helin        1977 VC    - - - - 
+   2449 Kenos              1978 GC    0.387 - 
+   2491 Tvashtri           1977 CB    - - - - 
+   2501 Lohja              1942 GD    0.206 - 
+   2510 Shandong           1979 TH    - - - - 
+   2577 Litva              1975 EE3   0.593 - 
+   2608 Seneca             1978 DA    - - - - 
+   2674 Pandarus           1982 BC3   - - - - 
+   2735 Ellen              1977 RB    - - - - 
+   2744 Birgitta           1975 RB    - - - - 
+   2760 Kacha              1980 TU6   - - - - 
+   2791 Paradise           1977 CA    - - - - 
+   2809 Vernadskij         1978 QW2   - - - - 
+   2830 Greenwich          1980 GA    - - - - 
+   2893 Peiroos            1975 QD    - - - - 
+   3102 Krok               1981 QA    - - - - 
+   3123 Dunham             1981 QF2   - - - - 
+   3124 Kansas             1981 VB    - - - - 
+   3169 Ostro              1981 LA    - - - - 
+   3199 Nefertiti          1982 RA    - - - - 
+   3288 Seleucus           1982 DV    0.376 - 
+   3757 - - -              1982 XB    0.220 8 
+   4015 Wilson-Harrington  1979 VA    - - - - 
+   4688 - - -              1980 WF    0.262 - 
+  12746 - - -              1992 WC1   - - - 11
+ 136564 - - -              1977 VA    - - - - 
+      0 - - -              1978 CA    - - - - 

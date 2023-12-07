@@ -1,0 +1,27 @@
+Asteroid designations ( Number, Name, Temporary designation): 2201, Oljato, 1947_XC
+Observation was done on (UT) (format YYYY-MM-DD-hh): 1981 - 12 - 29 - 00:00
+Observation was made by : McFadden et al. [1984b] E-mail; -
+At observatory with UAI code: 568
+Obsv. comments: Data digitized from the article
+The spectrum was published in the article: http://adsabs.harvard.edu/abs/1993JGR....98.3031M
+The normalization of this spectrum was made for the wavelength: 0.550 microns.
+Original name of the file was: Oljato1979.csv
+Wavelength[um]	Reflectance	sigma(optional)
+0.3285 1.92944
+0.3600 1.33060
+0.3806 1.02917
+0.4003 0.85684
+0.4367 0.86035
+0.4721 0.98903
+0.5035 1.01998
+0.5409 1.00000
+0.5694 1.11312
+0.6008 1.24186
+0.6284 1.14766
+0.6677 1.06899
+0.6972 0.95522
+0.7355 1.07606
+0.7631 0.95058
+0.8004 1.06360
+0.8260 1.00073
+0.8663 1.08242

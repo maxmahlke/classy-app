@@ -1,0 +1,64 @@
+Asteroid designations ( Number, Name, Temporary designation): 2201, Oljato, 1947_XC
+Observation was done on (UT) (format YYYY-MM-DD-hh): 1983 - 07 - 06 - 00:00
+Observation was made by : A J. Cochran  and E.S. Barker E-mail; -
+At observatory with UAI code: 711
+Obsv. comments: Data digitized from the article
+The spectrum was published in the article: http://adsabs.harvard.edu/abs/1993JGR....98.3031M
+The normalization of this spectrum was made for the wavelength: 0.550 microns.
+Original name of the file was: Oljato1983.csv
+Wavelength[um]	Reflectance	sigma(optional)
+0.3520 0.57982
+0.3540 0.54142
+0.3600 0.52740
+0.3609 0.55879
+0.3639 0.59714
+0.3668 0.61107
+0.3688 0.59012
+0.3698 0.65640
+0.3786 0.64584
+0.3855 0.63879
+0.3964 0.65962
+0.4003 0.62469
+0.4033 0.65955
+0.4092 0.64903
+0.4171 0.67686
+0.4230 0.69076
+0.4308 0.71859
+0.4318 0.74998
+0.4417 0.74290
+0.4446 0.76381
+0.4476 0.78471
+0.4515 0.81259
+0.4574 0.79508
+0.4643 0.82641
+0.4683 0.80544
+0.4732 0.79841
+0.4751 0.83677
+0.4791 0.85069
+0.4830 0.87856
+0.4860 0.90296
+0.4929 0.84706
+0.5007 0.89583
+0.5106 0.93411
+0.5185 0.94101
+0.5263 0.95140
+0.5342 0.96528
+0.5451 0.98261
+0.5510 1.00000
+0.5589 1.00341
+0.5648 0.97544
+0.5747 0.96139
+0.5806 0.98924
+0.5855 0.99966
+0.5894 0.96473
+0.5973 0.94023
+0.5983 0.94719
+0.5993 0.98207
+0.6012 1.00997
+0.6091 1.03780
+0.6150 1.06565
+0.6190 1.05515
+0.6278 1.09692
+0.6327 1.11781
+0.6386 1.15962
+0.6387 1.09681
