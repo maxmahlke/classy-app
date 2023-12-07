@@ -1,5 +1,5 @@
 streamlit
 pandas
 bokeh==2.4.3
-space-classy
+space-classy @ git+https://github.com/maxmahlke/classy@main
 space-rocks
