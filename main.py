@@ -1,24 +1,31 @@
-import itertools
 import os
 
-from bokeh.models import Legend
-from bokeh.plotting import figure
 import pandas as pd
-import rocks
 import streamlit as st
 
-st.set_page_config(layout="wide")
+
+# classy and rocks need prior settings
+os.environ["ROCKS_CACHE_DIR"] = "no-cache"
+import rocks  # noqa
+
 
 os.environ["CLASSY_DATA_DIR"] = "./data/"
-os.environ["ROCKS_CACHE_DIR"] = "no-cache"
-rocks.config.CACHELESS = True
 import classy  # noqa
 
 classy.config.APP_MODE = True
 
-spectra = []
-spectra_lit = []
-spectra_user = {}
+import user
+import text  # noqa
+
+# ------
+# Streamlit configuration
+st.set_page_config(layout="wide")
+
+# Init spectra session state entries
+st.session_state["SPECTRA_USER"] = {}
+
+# ------
+# Header
 st.image(
     "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.svg"
 )
@@ -26,92 +33,39 @@ st.image(
 left, right = st.columns(2)
 
 with left:
-    st.markdown(
-        "Welcome to the web interface of `classy`, a tool for the analysis of asteroid reflectance spectra. "
-        "This interface provides basic functionality. For the full feature set, you can have a look at the `python` package "
-        "[here](https://classy.readthedocs.io)."
-    )
+    st.markdown(text.GREETING)
 
 with right:
-    st.markdown(
-        "This interface allows to visualise, classify, and export reflectance spectra and their metadata. You can provide your "
-        "own data, use literature data, or a combination of the two. To get started, just keep scrolling."
-    )
+    st.markdown(text.INSTRUCTION)
 
+# ------
+# Your data
 st.markdown("---")
-
 st.header("Your data")
+
+spectra = []
+spectra_lit = []
+
+
 left, right = st.columns(2)
 with left:
-    HELP_UPLOAD = """
-    Upload one or more plain text files that contain one spectrum each.
-    The file should be comma-separated and have at least two columns: `wave` and `refl`.
-    Each row corresponds to one bin of the spectrum.
-
-    Example File:
-
-
-        wave,refl,refl_err
-        0.374,0.915,0.0007
-        0.418,0.941,0.0005
-        0.462,0.966,0.0004
-        0.506,0.997,0.0005
-        0.55,1.0,0.0005
-        0.594,1.010,0.0005
-        0.638,1.001,0.0005
-        0.682,1.013,0.0005
-        0.726,1.025,0.0005
-        0.77,1.033,0.0005
-        0.814,1.037,0.0005
-        0.858,1.033,0.0005
-        0.902,1.021,0.0006
-        0.946,1.034,0.0006
-        0.99,1.067,0.00067
-        1.034,1.114,0.0007
-
-    """
-    # TODO: Upload example file
     with st.expander("Upload"):
         uploaded_files = st.file_uploader(
             "Select one or more spectra to upload.",
-            type=None,
             accept_multiple_files=True,
-            key=None,
-            help=HELP_UPLOAD,
-            on_change=None,
-            args=None,
-            kwargs=None,
-            disabled=False,
-            label_visibility="visible",
+            help=text.HELP_DATA_UPLOAD,
+            on_change=user.parse_uploaded_files,
+            key="uploaded_spectra",
         )
 
-        if uploaded_files:
-            for uploaded_file in uploaded_files:
-                data = pd.read_csv(uploaded_file)
+        # TODO: Make size of index more apparent, give more examples
+        # "65k spectra, most common sources: SMASS, Gaia, most common shortbib: ..."
+        # "most common asteroid: ..."
+        # Make full width,
 
-                spectra_user[uploaded_file.name] = classy.Spectrum(
-                    wave=data.wave,
-                    refl=data.refl,
-                    refl_err=data.refl_err if "refl_err" in data.columns else None,
-                )
-
-                # TODO: Cache a bft table, remove some odd columns
-                # tar gz format
-                # Merge bft with index, make rocks queries unnecessary, we only want the albedo anyways
-                #
-                # index in parquet format?
-                #
-                # TODO: Make size of index more apparent, give more examples
-                # "65k spectra, most common sources: SMASS, Gaia, most common shortbib: ..."
-                # "most common asteroid: ..."
-                # Make full width,
-
-    if uploaded_files:
+    if st.session_state.SPECTRA_USER:
         with st.expander("Optional: Define Targets"):
-            st.markdown(
-                "For each spectrum, define the asteroidal target by providing an identifier. "
-                "The benefits of doing so are described [here](https://classy.readthedocs.io/en/latest/core.html#assigning-a-target)."
-            )
+            st.markdown(text.TARGETS)
             targets = {}
             for uploaded_file in uploaded_files:
                 col1, col2 = st.columns(2)
@@ -128,7 +82,9 @@ with left:
                     name, number = rocks.id(targets[uploaded_file.name])
 
                     if name is not None:
-                        spectra_user[uploaded_file.name].set_target(name)
+                        st.session_state.SPECTRA_USER[uploaded_file.name].set_target(
+                            name
+                        )
 
                 with col2:
                     # st.markdown(f"`{uploaded_file.name}`")
@@ -151,37 +107,8 @@ with left:
             st.markdown("To be implemented.")
 
 with right:
-    if uploaded_files:
-        if uploaded_files:
-            p = figure(
-                x_axis_label="Wavelength / μm",
-                y_axis_label="Reflectance",
-                toolbar_location="below",
-                height=400,
-            )
-
-            colors = classy.plotting.get_colors(len(uploaded_files), cmap="Spectral")
-            dashes = itertools.cycle(
-                ["solid", "dashed", "dotted", "dotdash", "dashdot"]
-            )
-
-            for uploaded_file in uploaded_files:
-                spec = spectra_user[uploaded_file.name]
-
-                p.line(
-                    spec.wave,
-                    spec.refl,
-                    legend_label=uploaded_file.name,
-                    line_width=2,
-                    line_color=colors.pop(),
-                    line_dash=next(dashes),
-                )
-
-            # TODO: Upload example file
-            # TODO: Possibility to enter target for each uploaded file
-            # TODO: Plot spectra as uploaded
-
-            st.bokeh_chart(p, use_container_width=True)
+    if st.session_state.SPECTRA_USER:
+        user.plot_spectra()
 
 st.markdown("---")
 st.header("Literature data")
@@ -366,16 +293,16 @@ with left:
     st.markdown(
         "Click the button to classify the spectra in the taxonomic schemes of [Mahlke, DeMeo, and Tholen](https://classy.readthedocs.io/en/latest/taxonomies.html)."
     )
-    st.markdown(f"Number of User Spectra: `{len(spectra_user)}`")
+    st.markdown(f"Number of User Spectra: `{len(st.session_state.SPECTRA_USER)}`")
     st.markdown(f"Number of Literature Spectra: `{len(spectra_lit)}`")
     classify = st.button("Classify")
 
 with right:
     if classify:
-        if not spectra_lit and not spectra_user:
+        if not spectra_lit and not st.session_state.SPECTRA_USER:
             st.write("You have to provide or select spectra first.")
         else:
-            spectra = spectra_lit + list(spectra_user.values())
+            spectra = spectra_lit + list(st.session_state.SPECTRA_USER.values())
             spectra.classify()
             spectra.classify(taxonomy="demeo")
             spectra.classify(taxonomy="tholen")
