@@ -42,3 +42,18 @@ TARGETS = (
     "For each spectrum, define the asteroidal target by providing an identifier. "
     "The benefits of doing so are described [here](https://classy.readthedocs.io/en/latest/core.html#assigning-a-target)."
 )
+
+LITERATURE = "Here you can select spectra from the literature to include in your analysis. Write a query and select the spectra you are interested by marking it in the `select` column."
+
+HELP_INPUT = """
+    Enter a query for spectra in the ``classy`` spectra database.
+    The query language is explained [here](https://classy.readthedocs.io/en/latest/select.html).
+
+    Example queries:
+
+    ``ceres`` - All spectra of (1) Ceres
+
+    ``4 --wave_min 0.45 --wave_max 2.45`` - VisNIR spectra of (4) Vesta
+
+    ``--source MITHNEOS --taxonomy L`` - All spectra of known L-types in MITHNEOS
+    """

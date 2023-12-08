@@ -14,8 +14,10 @@ import classy  # noqa
 
 classy.config.APP_MODE = True
 
-import user
+import literature
+import plotting
 import text  # noqa
+import user
 
 # ------
 # Streamlit configuration
@@ -23,6 +25,7 @@ st.set_page_config(layout="wide")
 
 # Init spectra session state entries
 st.session_state["SPECTRA_USER"] = {}
+st.session_state["SPECTRA_LIT"] = []
 
 # ------
 # Header
@@ -38,115 +41,27 @@ with left:
 with right:
     st.markdown(text.INSTRUCTION)
 
-# ------
-# Your data
-st.markdown("---")
-st.header("Your data")
 
 spectra = []
 spectra_lit = []
 
+# ------
+# User data
+user.layout()
 
-left, right = st.columns(2)
-with left:
-    with st.expander("Upload"):
-        uploaded_files = st.file_uploader(
-            "Select one or more spectra to upload.",
-            accept_multiple_files=True,
-            help=text.HELP_DATA_UPLOAD,
-            on_change=user.parse_uploaded_files,
-            key="uploaded_spectra",
-        )
-
-        # TODO: Make size of index more apparent, give more examples
-        # "65k spectra, most common sources: SMASS, Gaia, most common shortbib: ..."
-        # "most common asteroid: ..."
-        # Make full width,
-
-    if st.session_state.SPECTRA_USER:
-        with st.expander("Optional: Define Targets"):
-            st.markdown(text.TARGETS)
-            targets = {}
-            for uploaded_file in uploaded_files:
-                col1, col2 = st.columns(2)
-
-                with col1:
-                    targets[uploaded_file.name] = st.text_input(
-                        label=f"Define asteroidal target of `{uploaded_file.name}`",
-                        key=uploaded_file.name,
-                        label_visibility="visible",
-                        placeholder=uploaded_file.name,
-                    )
-
-                if targets[uploaded_file.name]:
-                    name, number = rocks.id(targets[uploaded_file.name])
-
-                    if name is not None:
-                        st.session_state.SPECTRA_USER[uploaded_file.name].set_target(
-                            name
-                        )
-
-                with col2:
-                    # st.markdown(f"`{uploaded_file.name}`")
-
-                    if targets[uploaded_file.name] and name is not None:
-                        st.markdown("")
-                        st.markdown("")
-                        st.markdown(
-                            f":white_check_mark: Resolved as: `({number}) {name}`"
-                        )
-                    else:
-                        st.markdown("")
-                        st.markdown("")
-                        st.markdown(":x: Unresolved")
-
-            # TODO: Upload example file
-            # TODO: Possibility to enter target for each uploaded file
-            #
-        with st.expander("Optional: Preprocess"):
-            st.markdown("To be implemented.")
-
-with right:
-    if st.session_state.SPECTRA_USER:
-        user.plot_spectra()
-
+# ------
+# Literature data
 st.markdown("---")
 st.header("Literature data")
 left, right = st.columns(2)
 
 with left:
-    st.markdown(
-        "Here you can select spectra from the literature to include in your analysis. Write a query and select the spectra you are interested by marking it in the `select` column."
-    )
+    st.markdown(text.LITERATURE)
 
-    def parse_input(args):
-        """Separate identifiers and option key-value pairs from arguments."""
-
-        # Separate query parameters and identifiers
-        args = args.split()
-        idx_options = [i for i, arg in enumerate(args) if arg.startswith("--")]
-        kwargs = (
-            {args[i].strip("--"): args[i + 1] for i in idx_options}
-            if idx_options
-            else {}
-        )
-
-        id = args[: min(idx_options)] if idx_options else args
-        id = None if not id else id
-        return id, kwargs
-
-    HELP_INPUT = """
-    Enter a query for spectra in the ``classy`` spectra database.
-    The query language is explained [here](https://classy.readthedocs.io/en/latest/select.html).
-
-    Example queries:
-
-    ``ceres`` - All spectra of (1) Ceres
-
-    ``4 --wave_min 0.45 --wave_max 2.45`` - VisNIR spectra of (4) Vesta
-
-    ``--source MITHNEOS --taxonomy L`` - All spectra of known L-types in MITHNEOS
-    """
+    # TODO: Make size of index more apparent, give more examples
+    # "65k spectra, most common sources: SMASS, Gaia, most common shortbib: ..."
+    # "most common asteroid: ..."
+    # Make full width,
 
     idx = classy.index.load()
     idx_selected = pd.DataFrame()
@@ -155,22 +70,16 @@ with left:
         input = st.text_input(
             "Query the `classy` spectra database",
             value="",
-            max_chars=None,
-            key=None,
             type="default",
-            help=HELP_INPUT,
-            autocomplete=None,
-            on_change=None,
-            args=None,
-            kwargs=None,
+            help=text.HELP_INPUT,
             placeholder="--source MITHNEOS --wave_min 0.4 --wave_max 2.4",
-            disabled=False,
-            label_visibility="visible",
         )
 
         # Live Update
         if input:
-            ids, kwargs = parse_input(input)
+            # TODO: --shortbib "Xu+ 1995" fails due to space
+            # TODO: index contains my private spectra
+            ids, kwargs = literature.parse_input(input)
 
             if ids:
                 st.write(
@@ -182,9 +91,9 @@ with left:
                     "Criteria:", ", ".join(f"`{k}: {v}`" for k, v in kwargs.items())
                 )
 
-            id, kwargs = parse_input(input)
-            idx = classy.index.query(id, **kwargs)
+            idx = classy.index.query(ids, **kwargs)
             idx["select"] = False
+
             idx = st.data_editor(
                 idx,
                 column_order=[
@@ -214,6 +123,7 @@ with left:
                 ],
                 hide_index=True,
             )
+            idx_selected = idx[idx.select]
 
     if not idx_selected.empty:
         with st.expander(
@@ -236,12 +146,12 @@ with right:
     if not idx_selected.empty:
         # Not setting target to avoid slow query
         # We just need name, number, albedo
-        spectra_lit = classy.Spectra(
+        st.session_state.SPECTRA_LIT = classy.Spectra(
             classy.index.data.load_spectra(idx_selected, skip_target=True)
         )
 
         idx_selected = idx_selected.reset_index()
-        for i, spec in enumerate(spectra_lit):
+        for i, spec in enumerate(st.session_state.SPECTRA_LIT):
             spec.target = rocks.Rock(
                 idx_selected["sso_name"].values[i],
                 ssocard={
@@ -256,33 +166,11 @@ with right:
                 skip_id_check=True,
             )
 
-        p = figure(
-            x_axis_label="Wavelength / μm",
-            y_axis_label="Reflectance",
-            toolbar_location="below",
-            height=400,
-        )
-
-        colors = classy.plotting.get_colors(len(spectra_lit), cmap="Spectral")
-        dashes = itertools.cycle(["solid", "dashed", "dotted", "dotdash", "dashdot"])
-
-        legend_items = []
-        for spec in spectra_lit:
-            l = p.line(
-                spec.wave,
-                spec.refl,
-                line_width=2,
-                line_color=colors.pop(),
-                line_dash=next(dashes),
-            )
-            legend_items.append((spec.name, [l]))
-        p.add_layout(Legend(items=legend_items, location=(10, 210)))
+        plotting.plot_spectra("literature")
         #
         # # TODO: Upload example file
         # # TODO: Possibility to enter target for each uploaded file
         # # TODO: Plot spectra as uploaded
-        #
-        st.bokeh_chart(p, use_container_width=True)
 
 st.markdown("---")
 st.header("Classify")
@@ -291,18 +179,20 @@ left, right = st.columns(2)
 
 with left:
     st.markdown(
-        "Click the button to classify the spectra in the taxonomic schemes of [Mahlke, DeMeo, and Tholen](https://classy.readthedocs.io/en/latest/taxonomies.html)."
+        "Click the button to classify the spectra in the taxonomies of [Mahlke, DeMeo, and Tholen](https://classy.readthedocs.io/en/latest/taxonomies.html)."
     )
     st.markdown(f"Number of User Spectra: `{len(st.session_state.SPECTRA_USER)}`")
-    st.markdown(f"Number of Literature Spectra: `{len(spectra_lit)}`")
+    st.markdown(f"Number of Literature Spectra: `{len(st.session_state.SPECTRA_LIT)}`")
     classify = st.button("Classify")
 
 with right:
     if classify:
-        if not spectra_lit and not st.session_state.SPECTRA_USER:
+        if not st.session_state.SPECTRA_LIT and not st.session_state.SPECTRA_USER:
             st.write("You have to provide or select spectra first.")
         else:
-            spectra = spectra_lit + list(st.session_state.SPECTRA_USER.values())
+            spectra = st.session_state.SPECTRA_LIT + list(
+                st.session_state.SPECTRA_USER.values()
+            )
             spectra.classify()
             spectra.classify(taxonomy="demeo")
             spectra.classify(taxonomy="tholen")

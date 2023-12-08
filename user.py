@@ -1,27 +1,84 @@
-import itertools
-
-from bokeh.plotting import figure
-import pandas as pd
-import streamlit as st
 import classy
+import pandas as pd
+import rocks
+import streamlit as st
+
+import plotting
+import text
 
 
-def parse_uploaded_files():
-    """"""
+def layout():
+    st.markdown("---")
+    st.header("Your data")
 
-    idx_invalid = _check_validity()
-    _parse_spectra(idx_invalid)
+    left, right = st.columns(2)
+    with left:
+        with st.expander("Upload"):
+            files = st.file_uploader(
+                "Select one or more spectra to upload.",
+                accept_multiple_files=True,
+                help=text.HELP_DATA_UPLOAD,
+                key="uploaded_spectra",
+            )
+
+            if files:
+                _parse_spectra()
+
+        if st.session_state.SPECTRA_USER:
+            with st.expander("Optional: Define Targets"):
+                st.markdown(text.TARGETS)
+
+                targets = {}
+                for file in files:
+                    col1, col2 = st.columns(2)
+
+                    with col1:
+                        targets[file.name] = st.text_input(
+                            label=f"Define target of `{file.name}`", key=file.name
+                        )
+
+                    if targets[file.name]:
+                        name, number = rocks.id(targets[file.name])
+
+                        if name is not None:
+                            st.session_state.SPECTRA_USER[file.name].set_target(name)
+
+                    with col2:
+                        if targets[file.name] and name is not None:
+                            st.markdown("")
+                            st.markdown("")
+                            st.markdown(
+                                f":white_check_mark: Resolved as: `({number}) {name}`"
+                            )
+                        else:
+                            st.markdown("")
+                            st.markdown("")
+                            st.markdown(":warning: Unresolved")
+
+            with st.expander("Optional: Preprocess"):
+                st.markdown("To be implemented.")
+
+    with right:
+        if st.session_state.SPECTRA_USER:
+            plotting.plot_spectra("user")
 
 
-def _parse_spectra(idx_invalid):
+def _parse_spectra():
     """Create classy.Spectrum instances from uploaded user spectra."""
 
     # Removing invalid files is not possible, so we just skip them
-    for i, file in enumerate(st.session_state.uploaded_spectra):
-        if i in idx_invalid:
+    for file in st.session_state.uploaded_spectra:
+        try:
+            data = pd.read_csv(file)
+        except pd.errors.ParserError:
+            st.error(f":x: Uploaded file '{file.name}' is not a CSV file.")
             continue
 
-        data = pd.read_csv(file)
+        if not all(col in data.columns for col in ["wave", "refl"]):
+            st.error(
+                f":x: Uploaded CSV file '{file.name}' does not contain 'wave' or 'refl' columns."
+            )
+            continue
 
         st.session_state.SPECTRA_USER[file.name] = classy.Spectrum(
             wave=data.wave,
@@ -29,56 +86,3 @@ def _parse_spectra(idx_invalid):
             refl_err=data.refl_err if "refl_err" in data.columns else None,
             filename=file.name,
         )
-
-
-def _check_validity():
-    """Ensure that uploaded spectra are valid CSV files with wave and refl columns."""
-
-    idx_invalid = []
-
-    for idx, file in enumerate(st.session_state.uploaded_spectra):
-        # Check files
-        try:
-            data = pd.read_csv(file)
-        except pd.errors.ParserError:
-            st.warning(f"Uploaded file '{file.name}' is not a CSV file.", icon="⚠️")
-            idx_invalid.append(idx)
-            continue
-
-        if not all(col in data.columns for col in ["wave", "refl"]):
-            st.warning(
-                f"Uploaded CSV file '{file.name}' does not contain 'wave' or 'refl' columns.",
-                icon="⚠️",
-            )
-            idx_invalid.append(idx)
-    return idx_invalid
-
-
-def plot_spectra():
-    p = figure(
-        x_axis_label="Wavelength / μm",
-        y_axis_label="Reflectance",
-        toolbar_location="below",
-        height=400,
-    )
-
-    colors = classy.plotting.get_colors(
-        len(st.session_state.SPECTRA_USER), cmap="Spectral"
-    )
-    dashes = itertools.cycle(["solid", "dashed", "dotted", "dotdash", "dashdot"])
-
-    for spec in st.session_state.SPECTRA_USER.values():
-        p.line(
-            spec.wave,
-            spec.refl,
-            legend_label=spec.filename,
-            line_width=2,
-            line_color=colors.pop(),
-            line_dash=next(dashes),
-        )
-
-    # TODO: Upload example file
-    # TODO: Possibility to enter target for each uploaded file
-    # TODO: Plot spectra as uploaded
-
-    st.bokeh_chart(p, use_container_width=True)
