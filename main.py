@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import streamlit as st
 
+# TODO: add rocks name-number index...
 
 # classy and rocks need prior settings
 os.environ["ROCKS_CACHE_DIR"] = "no-cache"
@@ -38,9 +39,11 @@ left, right = st.columns(2)
 with left:
     st.markdown(text.GREETING)
 
-with right:
     st.markdown(text.INSTRUCTION)
 
+st.markdown(
+    "Development of `classy` and the web interface are on-going. Last update: `2023-12-16`"
+)
 
 spectra = []
 spectra_lit = []
