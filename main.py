@@ -31,20 +31,44 @@ st.session_state["SPECTRA_LIT"] = []
 # ------
 # Header
 st.image(
-    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.svg"
+    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png", width=100
 )
 
 left, right = st.columns(2)
 
-with left:
-    st.markdown(text.GREETING)
+# with left:
+st.markdown(text.GREETING)
+st.markdown(text.INSTRUCTION)
 
-    st.markdown(text.INSTRUCTION)
+# Using "with" notation
+with st.sidebar:
+    st.image(
+    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png", width=100
+    )
 
-st.markdown(
-    "Development of `classy` and the web interface are on-going. Last update: `2023-12-16`"
-)
+    st.markdown(
+        "[GitHub](https://github.com/maxmahlke/classy) · [ReadTheDocs](https://classy.readthedocs.io/)"
+    )
+    st.text("")
+    st.text("")
+    st.text("In Short")
 
+with st.sidebar:
+    st.markdown("1. Upload your spectra")
+    st.markdown("2. Add literature spectra")
+    st.markdown("3. Classify spectra")
+    st.markdown("4. Export classifications")
+
+with st.sidebar:
+    # st.markdown("[Upload your data](#Yourdata)")
+    # st.markdown("Classify")
+    # st.markdown("Plot and Export")
+
+    st.text("")
+    st.text("")
+    st.text("")
+    st.markdown("Development of `classy` and the web interface are on-going.")
+    st.markdown("Last update: `2024-01-08`")
 spectra = []
 spectra_lit = []
 
@@ -55,8 +79,9 @@ user.layout()
 # ------
 # Literature data
 st.markdown("---")
-st.header("Literature data")
+st.markdown("**Optional: Add literature spectra**")
 left, right = st.columns(2)
+
 
 with left:
     st.markdown(text.LITERATURE)
@@ -129,6 +154,10 @@ with left:
             idx_selected = idx[idx.select]
 
     if not idx_selected.empty:
+        # with st.sidebar:
+        #     st.markdown(
+        #         f"Selected {len(idx_selected)} spectr{'a' if len(idx_selected) != 1 else 'um'}."
+        #     )
         with st.expander(
             f"Selected {len(idx_selected)} spectr{'a' if len(idx_selected) != 1 else 'um'}."
         ):
@@ -144,6 +173,8 @@ with left:
                 ],
                 hide_index=True,
             )
+
+            # st.button("Download Spectra")
 
 with right:
     if not idx_selected.empty:
@@ -174,55 +205,94 @@ with right:
         # # TODO: Upload example file
         # # TODO: Possibility to enter target for each uploaded file
         # # TODO: Plot spectra as uploaded
+    user.update_session_spectra()
 
 st.markdown("---")
-st.header("Classify")
+st.markdown("**Classify**")
 
 left, right = st.columns(2)
 
 with left:
-    st.markdown(
-        "Click the button to classify the spectra in the taxonomies of [Mahlke, DeMeo, and Tholen](https://classy.readthedocs.io/en/latest/taxonomies.html)."
-    )
-    st.markdown(f"Number of User Spectra: `{len(st.session_state.SPECTRA_USER)}`")
-    st.markdown(f"Number of Literature Spectra: `{len(st.session_state.SPECTRA_LIT)}`")
-    classify = st.button("Classify")
+    # st.markdown(
+    #     "Click the button to classify the spectra in the taxonomies of [Mahlke, DeMeo, and Tholen](https://classy.readthedocs.io/en/latest/taxonomies.html)."
+    # )
+    if st.session_state.SPECTRA_USER or st.session_state.SPECTRA_LIT:
+        desc = f"Classify `{len(st.session_state.SPECTRA_USER) + len(st.session_state.SPECTRA_LIT)}` spectr{'um' if (len(st.session_state.SPECTRA_USER) + len(st.session_state.SPECTRA_LIT)) == 1 else 'a'}."
+        classify = st.button(desc, disabled=False)
+    else:
+        classify = st.button("Classify", disabled=True)
+        st.markdown(
+            "Either upload your spectra or select literature spectra to continue."
+        )
 
-with right:
+    # with right:
     if classify:
-        if not st.session_state.SPECTRA_LIT and not st.session_state.SPECTRA_USER:
+        if not st.session_state.SPECTRA:
             st.write("You have to provide or select spectra first.")
         else:
-            spectra = st.session_state.SPECTRA_LIT + list(
-                st.session_state.SPECTRA_USER.values()
-            )
-            spectra.classify()
-            spectra.classify(taxonomy="demeo")
-            spectra.classify(taxonomy="tholen")
-            results = spectra.export(
-                columns=[
-                    "name",
-                    "target.albedo.value",
-                    "class_mahlke",
-                    "class_demeo",
-                    "class_tholen",
-                ]
-            )
+            with st.spinner('Classifying..'):
+                spectra = st.session_state.SPECTRA
+                spectra.classify()
+                spectra.classify(taxonomy="demeo")
+                spectra.classify(taxonomy="tholen")
+                results = spectra.export(
+                    columns=[
+                        "name",
+                        "target.albedo.value",
+                        "class_mahlke",
+                        "class_demeo",
+                        "class_tholen",
+                    ]
+                )
             # st.write(", ".join(spec.class_ for spec in spectra))
             st.dataframe(results, hide_index=True)
 
-st.markdown("---")
-st.header("Visualize and Export")
+# st.markdown("---")
+# st.markdown("**Visualize**")
 
-st.write("To be implemented.")
+with right:
+    if classify:
+        tab1, tab2, tab3 = st.tabs(["Mahlke+ 2022", "DeMeo+ 2009", "Tholen 1984"])
 
+        with tab1:
+            with st.spinner("Plotting  results"):
+                import matplotlib.pyplot as plt
+
+                fig, ax = plt.subplots()
+                classy.plotting._plot_taxonomy_mahlke(ax, spectra)
+                st.pyplot(fig, dpi=600)
+
+        with tab2:
+            with st.spinner("Plotting  results"):
+                import matplotlib.pyplot as plt
+
+                fig, ax = plt.subplots()
+                classy.plotting._plot_taxonomy_demeo(ax, spectra)
+                st.pyplot(fig, dpi=600)
+
+        with tab3:
+            # _, ax_tholen = spectra.plot(show=False, taxonomy="tholen")
+
+            with st.spinner("Plotting  results"):
+                import matplotlib.pyplot as plt
+
+                fig, ax = plt.subplots()
+                classy.plotting._plot_taxonomy_tholen(ax, spectra)
+                st.pyplot(fig, dpi=600)
+
+# hide_footer_style = """
+#     <style>
+#     .reportview-container .main footer {visibility: hidden;}
+#     """
+# st.markdown(hide_footer_style, unsafe_allow_html=True)
 # left, right = st.columns(2)
 #
 # with left:
 #     st.markdown(
 #         "Here, you can select spectra from the literature to include in your analysis."
 #     )
-#
+
 # with right:
 #     if st.button("Export"):
 #         st.write("Exporting")
+# #

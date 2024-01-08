@@ -39,11 +39,11 @@ HELP_DATA_UPLOAD = """
     """
 
 TARGETS = (
-    "For each spectrum, define the asteroidal target by providing an identifier. "
+    "Define the asteroidal target by providing an identifier (e.g. 'ceres' or '1' for (1) Ceres). "
     "The benefits of doing so are described [here](https://classy.readthedocs.io/en/latest/core.html#assigning-a-target)."
 )
 
-LITERATURE = "Here you can select spectra from the literature to include in your analysis. Write a query and select the spectra you are interested by marking it in the `select` column."
+LITERATURE = "Here you can select spectra from the literature to include in your analysis. Write a query and select the spectra to add by marking it in the `select` column."
 
 HELP_INPUT = """
     Enter a query for spectra in the ``classy`` spectra database.

@@ -9,11 +9,15 @@ import text
 
 def layout():
     st.markdown("---")
-    st.header("Your data")
+    st.markdown("**Optional: Upload Your Spectra**")
 
     left, right = st.columns(2)
     with left:
-        with st.expander("Upload"):
+        with st.expander(
+            "Upload CSV files"
+            if not st.session_state.SPECTRA_USER
+            else f"{len(st.session_state.SPECTRA_USER)}"
+        ):
             files = st.file_uploader(
                 "Select one or more spectra to upload.",
                 accept_multiple_files=True,
@@ -26,15 +30,15 @@ def layout():
 
         if st.session_state.SPECTRA_USER:
             with st.expander("Optional: Define Targets"):
-                st.markdown(text.TARGETS)
-
                 targets = {}
                 for file in files:
                     col1, col2 = st.columns(2)
 
                     with col1:
                         targets[file.name] = st.text_input(
-                            label=f"Define target of `{file.name}`", key=file.name
+                            label=f"Define target of `{file.name}`",
+                            key=file.name,
+                            help=text.TARGETS,
                         )
 
                     if targets[file.name]:
@@ -70,8 +74,8 @@ def _parse_spectra():
     for file in st.session_state.uploaded_spectra:
         try:
             data = pd.read_csv(file)
-        except pd.errors.ParserError:
-            st.error(f":x: Uploaded file '{file.name}' is not a CSV file.")
+        except (pd.errors.ParserError, pd.errors.EmptyDataError):
+            st.error(f":x: Uploaded file `{file.name}` is not a CSV file or empty.")
             continue
 
         if not all(col in data.columns for col in ["wave", "refl"]):
@@ -86,3 +90,21 @@ def _parse_spectra():
             refl_err=data.refl_err if "refl_err" in data.columns else None,
             filename=file.name,
         )
+
+    update_session_spectra()
+
+
+def update_session_spectra():
+    if not st.session_state.SPECTRA_LIT:
+        spectra = classy.Spectra(list(st.session_state.SPECTRA_USER.values()))
+    if not st.session_state.SPECTRA_USER:
+        spectra = st.session_state.SPECTRA_LIT
+    if st.session_state.SPECTRA_USER and st.session_state.SPECTRA_LIT:
+        spectra = st.session_state.SPECTRA_LIT + list(
+            st.session_state.SPECTRA_USER.values()
+        )
+
+    colors = classy.plotting.get_colors(len(spectra), cmap="jet")
+    for i, spec in enumerate(spectra):
+        spec._color = colors[i]
+    st.session_state.SPECTRA = spectra

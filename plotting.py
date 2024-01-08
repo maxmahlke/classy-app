@@ -19,6 +19,9 @@ def plot_spectra(which):
         height=400,
     )
 
+    # TODO: Use st.session_state.SPECTRA and their _color attributes instead
+    # This requires redrawing both plots when adding a new spectrum
+    # but it matches the colors of the spectra with those in the classification results plots
     colors = classy.plotting.get_colors(
         len(spectra) if len(spectra) != 3 else len(spectra) + 1, cmap="Spectral"
     )
