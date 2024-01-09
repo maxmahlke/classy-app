@@ -1,4 +1,6 @@
+import io
 import os
+import zipfile
 
 import pandas as pd
 import streamlit as st
@@ -31,7 +33,8 @@ st.session_state["SPECTRA_LIT"] = []
 # ------
 # Header
 st.image(
-    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png", width=100
+    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png",
+    width=100,
 )
 
 left, right = st.columns(2)
@@ -43,7 +46,8 @@ st.markdown(text.INSTRUCTION)
 # Using "with" notation
 with st.sidebar:
     st.image(
-    "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png", width=100
+        "https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png",
+        width=100,
     )
 
     st.markdown(
@@ -68,7 +72,7 @@ with st.sidebar:
     st.text("")
     st.text("")
     st.markdown("Development of `classy` and the web interface are on-going.")
-    st.markdown("Last update: `2024-01-08`")
+    st.markdown("Last update: `2024-01-09`")
 spectra = []
 spectra_lit = []
 
@@ -174,7 +178,17 @@ with left:
                 hide_index=True,
             )
 
-            # st.button("Download Spectra")
+            # create in-memory zip file of spectra and summary csv
+            b = io.BytesIO()
+            zip = zipfile.ZipFile(b, mode="w")
+            for file in idx_selected.index:
+                zip.write("data/" + file, file)
+
+            idx_selected.to_csv("data/index.csv", index=True)
+            zip.write("data/index.csv", "index.csv")
+            zip.close()
+
+            st.download_button("Download Spectra", b, mime="application/zip")
 
 with right:
     if not idx_selected.empty:
@@ -230,7 +244,7 @@ with left:
         if not st.session_state.SPECTRA:
             st.write("You have to provide or select spectra first.")
         else:
-            with st.spinner('Classifying..'):
+            with st.spinner("Classifying.."):
                 spectra = st.session_state.SPECTRA
                 spectra.classify()
                 spectra.classify(taxonomy="demeo")
