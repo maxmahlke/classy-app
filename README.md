@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="260" src="https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.svg">
+  <img width="260" src="https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png">
 </p>
 
 <p align="center">
