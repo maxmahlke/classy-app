@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  This repository hosts the [web interface](https://classy.streamlit.app) of [classy](https://classy.readthedocs.io)
+  This repository hosts the <a href="https://classy.streamlit.app">web interface</a> of <a href="https://classy.readthedocs.io">classy</a>.
 </p>
 
 
