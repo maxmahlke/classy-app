@@ -1,9 +1,9 @@
 <p align="center">
-  <img width="260" src="https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.svg">
+  <img width="260" src="https://raw.githubusercontent.com/maxmahlke/classy/master/docs/_static/logo_classy.png">
 </p>
 
 <p align="center">
-  This repository hosts the [web interface](https://classy.streamlit.app) of [classy](https://classy.readthedocs.io)
+  This repository hosts the <a href="https://classy.streamlit.app">web interface</a> of <a href="https://classy.readthedocs.io">classy</a>.
 </p>
 
 
