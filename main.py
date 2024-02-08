@@ -181,7 +181,12 @@ with left:
             # create in-memory zip file of spectra and summary csv
             b = io.BytesIO()
             zip = zipfile.ZipFile(b, mode="w")
-            for file in idx_selected.index:
+            for file, meta in idx_selected.iterrows():
+                if meta.source == "Gaia":
+                    data = classy.sources.gaia._load_virtual_file(meta)
+                    Path("data/" + file).parent.mkdir(parents=True, exist_ok=True)
+                    data.to_csv("data/" + file, index=False)
+
                 zip.write("data/" + file, file)
 
             idx_selected.to_csv("data/index.csv", index=True)
