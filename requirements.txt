@@ -4,3 +4,4 @@ bokeh==2.4.3
 space-classy @ git+https://github.com/maxmahlke/classy@main
 space-rocks
 altair<5
+tf-keras

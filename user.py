@@ -59,8 +59,8 @@ def layout():
                             st.markdown("")
                             st.markdown(":warning: Unresolved")
 
-            with st.expander("Optional: Preprocess"):
-                st.markdown("To be implemented.")
+            # with st.expander("Optional: Preprocess"):
+            #     st.markdown("To be implemented.")
 
     with right:
         if st.session_state.SPECTRA_USER:
