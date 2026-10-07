@@ -1,5 +1,6 @@
 import io
 import os
+from pathlib import Path
 import zipfile
 
 import pandas as pd
@@ -115,7 +116,7 @@ with left:
 
             if ids:
                 st.write(
-                    f"Asteroid{'s' if len(ids)>1 else ''}: ",
+                    f"Asteroid{'s' if len(ids) > 1 else ''}: ",
                     ", ".join(f"`{id}`" for id in ids),
                 )
             if kwargs:
@@ -180,20 +181,23 @@ with left:
 
             # create in-memory zip file of spectra and summary csv
             b = io.BytesIO()
-            zip = zipfile.ZipFile(b, mode="w")
-            for file, meta in idx_selected.iterrows():
-                if meta.source == "Gaia":
-                    data = classy.sources.gaia._load_virtual_file(meta)
-                    Path("data/" + file).parent.mkdir(parents=True, exist_ok=True)
-                    data.to_csv("data/" + file, index=False)
+            with zipfile.ZipFile(b, mode="w") as zip:
+                # zip = zipfile.ZipFile(b, mode="w")
+                for file, meta in idx_selected.iterrows():
+                    if meta.source == "Gaia":
+                        data = classy.sources.gaia._load_virtual_file(meta)
+                        Path("data/" + file).parent.mkdir(parents=True, exist_ok=True)
+                        data.to_csv("data/" + file, index=False)
 
-                zip.write("data/" + file, file)
+                    zip.write("data/" + file, file)
 
-            idx_selected.to_csv("data/index.csv", index=True)
-            zip.write("data/index.csv", "index.csv")
-            zip.close()
+                idx_selected.to_csv("data/index.csv", index=True)
+                zip.write("data/index.csv", "index.csv")
+            # zip.close()
 
-            st.download_button("Download Spectra", b, mime="application/zip")
+            st.download_button(
+                "Download Spectra", b, file_name="classy.zip", mime="application/zip"
+            )
 
 with right:
     if not idx_selected.empty:
