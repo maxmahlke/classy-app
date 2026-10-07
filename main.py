@@ -59,7 +59,7 @@ with st.sidebar:
 
 with st.sidebar:
     st.markdown("1. Upload your spectra")
-    st.markdown("2. Add literature spectra")
+    st.markdown("2. Add literature spectra [optional]")
     st.markdown("3. Classify spectra")
     st.markdown("4. Export classifications")
 
@@ -72,7 +72,7 @@ with st.sidebar:
     st.text("")
     st.text("")
     st.markdown("Development of `classy` and the web interface are on-going.")
-    st.markdown("Last update: `2024-01-09`")
+    st.markdown("Last update: `2026-10-07`")
 spectra = []
 spectra_lit = []
 
