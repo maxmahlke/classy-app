@@ -4,6 +4,7 @@ from bokeh.models import Legend
 from bokeh.plotting import figure
 import classy
 import streamlit as st
+from streamlit_bokeh import streamlit_bokeh
 
 
 def plot_spectra(which):
@@ -39,4 +40,4 @@ def plot_spectra(which):
         )
         legend_items.append((spec.name if which != "user" else spec.filename, [line]))
     p.add_layout(Legend(items=legend_items, location=(10, 210)))
-    st.bokeh_chart(p, use_container_width=True)
+    streamlit_bokeh(p, use_container_width=True)
