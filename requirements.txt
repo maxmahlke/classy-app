@@ -1,4 +1,5 @@
 streamlit
+streamlit-bokeh
 pandas
 bokeh
 space-classy @ git+https://github.com/maxmahlke/classy@main
