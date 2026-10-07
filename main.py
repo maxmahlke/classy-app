@@ -203,7 +203,7 @@ with right:
             classy.index.data.load_spectra(idx_selected, skip_target=True)
         )
 
-        idx_selected = idx_selected.reset_index()
+        idx_selected = idx_selected.reset_index(drop=True)
         for i, spec in enumerate(st.session_state.SPECTRA_LIT):
             spec.target = rocks.Rock(
                 idx_selected["sso_name"].values[i],
